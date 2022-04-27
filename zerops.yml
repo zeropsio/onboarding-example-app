@@ -1,0 +1,12 @@
+app:
+  build:
+    base: [ nodejs@16 ]
+    build:
+      - npm i
+      - npm run build
+    deploy: [ 'dist/onboarding-example-app/~/' ]
+    cache: [ node_modules ]
+  run:
+    envReplace:
+      target: [ '.' ]
+      delimiter: [ '%%' ]
